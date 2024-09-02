@@ -1,0 +1,23 @@
+<h2 [style.color]="color" [style.background]="bgcolor">Login Component</h2>
+<button (click)="updatecolor()">Update Title color</button>
+
+<form #basicForm="ngForm" (ngSubmit)="getLoginCredentials(basicForm.value)">
+    <br />
+    <input type="text" ngModel name="user" placeholder="Enter User Name" />
+    <br />
+    <br />
+    <input type="password" ngModel name="password" placeholder="Enter Password" />
+    <br />
+    <br />
+    <button>Login</button>
+</form>
+
+<ul *ngIf="userdata !=undefined">
+    <li>{{userdata.user}}
+    </li>
+    <li>
+        {{userdata.password}}
+    </li>
+</ul>
+
+<h3 *ngFor="let mails of usermails">{{mails}}</h3>

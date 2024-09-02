@@ -1,0 +1,11 @@
+<h1 appRedEl>Reactive Login</h1>
+<br />
+<br />
+<form [formGroup]='reactiveform' (ngSubmit)="getlogin()">
+    <input type="text" placeholder="username" formControlName='user' />
+    <br /><span style="color: red;" *ngIf="user && user.invalid && user.touched">Incorrect username</span><br />
+    <input type="password" placeholder="password" formControlName='password' />
+    <br /><span style="color: red;" *ngIf="password && password.invalid && password.touched">Incorrect
+        password</span><br />
+    <button [disabled]="reactiveform.invalid">Login</button>
+</form>
